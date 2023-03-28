@@ -1,6 +1,6 @@
 # Subarray with given sum
 ## Easy
-<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given an unsorted array <strong>A </strong>of size <strong>N</strong>&nbsp;that contains only&nbsp;non-negative integers, find a continuous sub-array that adds to a given number <strong>S&nbsp;</strong>and return the left and right index(<strong>1-based indexing</strong>) of that subarray.</span></p>
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given an unsorted array <strong>A </strong>of size <strong>N</strong>&nbsp;that contains only&nbsp;positive integers, find a continuous sub-array that adds to a given number <strong>S&nbsp;</strong>and return the left and right index(<strong>1-based indexing</strong>) of that subarray.</span></p>
 
 <p><span style="font-size:18px">In case of multiple subarrays, return the subarray indexes which come first on moving from left to right.</span></p>
 
