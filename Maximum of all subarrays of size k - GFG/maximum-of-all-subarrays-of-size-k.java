@@ -53,12 +53,12 @@ class Solution {
     //Function to find maximum of each subarray of size k.
     static ArrayList<Integer> max_of_subarrays(int arr[], int n, int k) {
         ArrayList<Integer> ans = new ArrayList<>();
-        if (k == 1) { // handle edge case
-            for (int i = 0; i < n; i++) {
-                ans.add(arr[i]);
-            }
-            return ans;
-        }
+        // if (k == 1) { // handle edge case
+        //     for (int i = 0; i < n; i++) {
+        //         ans.add(arr[i]);
+        //     }
+        //     return ans;
+        // }
         Deque<Integer> deque = new ArrayDeque<>();
         for (int i = 0; i < n; i++) {
             // remove elements outside the current window
