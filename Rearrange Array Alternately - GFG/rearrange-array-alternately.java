@@ -58,20 +58,12 @@ class Solution{
         
         // Your code here
         long maxElement = arr[n-1]+1;
-        int max_element_ptr= n-1;
-        int min_element_ptr = 0;
+        int max_element_ptr= n-1, min_element_ptr = 0;
         for(int i=0; i<n; i++){
-            if(i%2==0){
-                arr[i] = (arr[max_element_ptr]%maxElement)*maxElement+arr[i];
-                max_element_ptr--;
-            }else{
-                arr[i] = (arr[min_element_ptr]%maxElement)*maxElement+arr[i];
-                min_element_ptr++;
-            }
+            if(i%2==0)  arr[i] = (arr[max_element_ptr--]%maxElement)*maxElement+arr[i];
+            else  arr[i] = (arr[min_element_ptr++]%maxElement)*maxElement+arr[i];
         }
-        
         for(int i=0; i<n; i++) arr[i] /= maxElement;
-        
     }
     
 }
