@@ -46,19 +46,15 @@ class Solution
         int[] ans = new int[n];
         Stack<Integer> stack = new Stack<>();
         for(int i=0; i<n; i++){
-            while(!stack.isEmpty() && price[stack.peek()] <= price[i]){
+            while(!stack.isEmpty() && price[stack.peek()] <= price[i])
                 stack.pop();
-            }
-            if(stack.isEmpty()){
-                if(i==0)
-                    ans[i] = 1;
-                else
-                    ans[i] = i+1;
-            }
-                
-            else{
+            
+            if(stack.isEmpty())
+                ans[i] = i==0 ? 1 : i+1;
+            
+            else
                 ans[i] = i-stack.peek();
-            }
+            
             stack.push(i);
         }
         return ans;
