@@ -33,25 +33,25 @@ class GFG
 
 class Solution
 {   
-    public int findMaxSum(int arr[], int n, int[] dp){
-        if(n==0) return arr[0];
-        if(n<0){
-            return 0;
-        }
-        
-        if(dp[n]!=0) return dp[n];
-        int oneHouse = arr[n]+ findMaxSum(arr, n-2, dp);
-        int secondHouse = Integer.MIN_VALUE;
-        
-        secondHouse =  findMaxSum(arr, n-1,dp);
     
-        dp[n] = Math.max(oneHouse, secondHouse);
-        return dp[n];
-    }
     public int FindMaxSum(int arr[], int n)
     {
         // Your code here
+        if(n==1 || n==2){
+            int secondElm = Integer.MIN_VALUE;
+            if(n==2){
+                secondElm = arr[1];
+            }
+            return Math.max(arr[0], secondElm);
+        }
         int dp[] = new int[n];
-        return findMaxSum(arr, n-1, dp);
+        dp[0] = arr[0];
+        // dp[1] = arr[1];
+        for(int i=1; i<n; i++){
+            int temp = arr[i];
+            if(i>1) temp += dp[i-2];
+            dp[i] = Math.max(temp, dp[i-1]);
+        }
+        return dp[n-1];
     }
 }
